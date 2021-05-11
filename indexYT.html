@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+</head>
+<style>
+  
+</style>
+<body>
+    <div class="container py-5 bg-warning text-center">
+        <h1>CONTADOR</h1>
+        <Button class= "btn btn-info">
+            Aumentar
+        </Button>
+        <Button class= "btn btn-danger">
+            Disminuir
+        </Button>
+        <h4 class= "my-5">Contador: <span id="span">0</span></h4>
+    </div>
+    <script>
+
+        //PRIMERA RESOLUCION 
+        // const btnAumentar = document.querySelector('.btn-info')
+        // const btnDisminuir = document.querySelector('.btn-danger')
+        // const span = document.getElementById('span')
+        // let contador = 0
+        // const aumentar = ()=>{
+        //     contador++
+        //     span.textContent = contador
+        // }
+
+        // const disminuir = ()=>{
+        //     contador--
+        //     span.textContent = contador
+        // }
+
+        // btnAumentar.addEventListener('click', aumentar)
+        // btnDisminuir.addEventListener('click', disminuir)
+
+        //SEGUNDA RESOLUCION
+        const container = document.querySelector(".container")
+        //SE DETECTA EL CLICK EN TODO EL CONTAINER
+        const span = document.getElementById('span')
+        let contador = 0;
+
+        const contadorMasMenos = (event) =>{
+            if (event.target.classList.contains('btn-info')){
+                contador++
+                span.innerText = contador
+            }else if (event.target.classList.contains('btn-danger')){
+                contador--
+                span.innerText = contador
+            }
+            event.stopPropagation()
+        }
+       
+        container.addEventListener('click',contadorMasMenos)
+
+        document.body.addEventListener('click', () =>{
+            console.log('diste click')
+        })
+
+
+
+    </script>
+</body>
+</html>
