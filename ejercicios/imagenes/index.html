@@ -5,6 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+<style>
+
+
+    .chica{
+    height: 100px;
+  }
+
+  .grande{
+    height: 500px;
+  } 
+
+</style>
+
+
 </head>
 <body>
     <img src="https://pbs.twimg.com/profile_images/1057034278171750400/IJYfeOIe.jpg" alt="" class="chica">
@@ -25,17 +40,17 @@
 const chica = document.getElementsByClassName('chica');
 const grande = document.getElementsByClassName('grande')[0];
 const cambio = (event) => {
-        const fotoChica=event.target;
-        const srcChica = fotoChica.getAttribute('src');
-        grande.setAttribute('src' , srcChica)
+    const fotoChica=event.target;
+    const srcChica = fotoChica.getAttribute('src');
+    grande.setAttribute('src' , srcChica)
 }
-for(let i = 0; i < chica.length; i++) {
 
- chica[i].addEventListener('click', cambio)
+for(let i = 0; i < chica.length; i++) {
+    chica[i].addEventListener('click', cambio)
 }
 
 
 
 
 </script>
-</html>
+</html> 

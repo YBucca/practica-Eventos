@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/2b0ee45a2e.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        width: 100vw;
+        height: 100vh;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .darkmode{
+        background-color: black;
+        color: white;
+    }
+    .btn {
+        height:80px;
+        width: 80px;
+        background-color: rgb(134, 212, 147);
+        border-radius: 50%;
+
+    }
+    img{
+        width: 50px;
+        height:50px;
+    }
+</style>
+
+
+<body>
+    
+    <!-- Crear un documento html con un título, un párrafo y un bótón con un ícono. Centrar los elementos, cambiar los tamaños y tipografía del texto y tamaño del ícono. Hacer que el body ocupe toda la pantalla. Al clickear el botón, debe alternar entre modo oscuro y modo claro:
+
+modo oscuro: body con color de fondo negro, texto e ícono con color blanco, ícono de sol
+modo claro: body con color de fondo blanco, texto e ícono con color negro, ícono de luna -->
+<h1>Hola Mundo</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, voluptates!</p>
+
+<button type="button" id="button" class="btn">
+    <img src="./sun-png.png" alt="">
+</button>
+
+
+<script>
+
+const body = document.querySelector('body');
+
+const boton= document.getElementById('button');
+const img= document.querySelector('img');
+
+const clarOscuro = () =>{
+    document.body.classList.toggle('darkmode');
+    const imageSrc=img.getAttribute('src');
+    if (imageSrc==='./sun-png.png'){
+        img.setAttribute('src','./moon-png.png')
+    }
+    else{
+        img.setAttribute('src','./sun-png.png')
+    }
+    
+}
+
+boton.addEventListener('click', clarOscuro);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
